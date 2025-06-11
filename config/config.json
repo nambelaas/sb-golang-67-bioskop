@@ -1,0 +1,12 @@
+{
+  "app": {
+    "port": 8080
+  },
+  "database": {
+    "username": "postgres",
+    "password": "postgres",
+    "name": "db-bioskop-golang",
+    "host": "localhost",
+    "port": 5432
+  }
+}

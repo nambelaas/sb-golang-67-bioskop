@@ -7,5 +7,12 @@ import (
 )
 
 func Init(router *gin.Engine) {
-	router.POST("/bioskop", bioskop.CreateBioskopRouter)
+	{
+		bioskopRoute := router.Group("/bioskop")
+		bioskopRoute.POST("/", bioskop.CreateBioskopRouter)
+		bioskopRoute.GET("/", bioskop.GetAllBioskop)
+		bioskopRoute.GET("/:id", bioskop.GetBioskopById)
+		bioskopRoute.PUT("/:id", bioskop.UpdateBioskop)
+		bioskopRoute.DELETE("/:id", bioskop.DeleteBioskop)
+	}
 }

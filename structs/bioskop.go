@@ -1,4 +1,4 @@
-package bioskop
+package structs
 
 type Bioskop struct {
 	Id     int     `json:"id"`

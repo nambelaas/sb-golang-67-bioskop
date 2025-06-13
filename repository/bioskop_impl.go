@@ -63,7 +63,7 @@ func (b *BioskopRepository) GetBioskopById(id string) (result structs.Bioskop, e
 	errs := connection.DbConn.QueryRow(sqlStatement, id).Scan(&resultData.Id, &resultData.Nama, &resultData.Lokasi, &resultData.Rating)
 	if errs != nil {
 		if errs == sql.ErrNoRows {
-			var msg = "gagal menemukan user dengan id tersebut"
+			var msg = "gagal menemukan bioskop dengan id tersebut"
 			return resultData, errors.New(msg)
 		} else {
 			return resultData, errs

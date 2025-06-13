@@ -3,10 +3,20 @@
     "port": 8080
   },
   "database": {
-    "username": "postgres",
-    "password": "postgres",
-    "name": "db-bioskop-golang",
-    "host": "localhost",
-    "port": 5432
+    "local": {
+      "username": "postgres",
+      "password": "postgres",
+      "name": "db-bioskop-golang",
+      "host": "localhost",
+      "port": 5432
+    },
+    "railway": {
+      "database_url": "postgresql://postgres:VmxcSaBFoLWGVEJXKgKGZnhXbPcmynFh@postgres.railway.internal:5432/railway",
+      "pgdatabase": "railway",
+      "pghost": "postgres.railway.internal",
+      "pgpassword": "VmxcSaBFoLWGVEJXKgKGZnhXbPcmynFh",
+      "pgport": 5432,
+      "pguser": "postgres"
+    }
   }
 }

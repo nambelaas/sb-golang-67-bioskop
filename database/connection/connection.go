@@ -15,8 +15,11 @@ var (
 
 func Init() {
 	dbData := fmt.Sprintf("host=%s user=%s port=%d password=%s dbname=%s sslmode=disable",
-		viper.GetString("database.host"),
-		viper.GetString("database.username"), viper.GetInt("database.port"), viper.GetString("database.password"), viper.GetString("database.name"))
+		viper.GetString("database.railway.pghost"),
+		viper.GetString("database.railway.pguser"), 
+		viper.GetInt("database.railway.pgport"), 
+		viper.GetString("database.railway.pgpassword"), 
+		viper.GetString("database.railway.pgdatabase"))
 
 	DbConn, err = sql.Open("postgres", dbData)
 

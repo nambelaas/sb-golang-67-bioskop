@@ -6,5 +6,5 @@ nixPkgs = ['...', 'go-migrate']
 [phases.start]
 cmds = [
     "...",
-    "migrate -database '${ DATABASE_URL }?sslmode=disable' -path database/migration up"
+    "migrate -database '${DATABASE_URL}?sslmode=disable' -path database/migration up"
 ]

@@ -2,3 +2,6 @@ providers = ['go']
 
 [phases.setup]
 nixPkgs = ['...', 'go-migrate']
+
+[start]
+cmd = "migrate -database 'postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}?sslmode=disable' -path database/migration up"

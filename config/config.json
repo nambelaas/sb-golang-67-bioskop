@@ -15,7 +15,7 @@
       "pgdatabase": "railway",
       "pghost": "postgres.railway.internal",
       "pgpassword": "VmxcSaBFoLWGVEJXKgKGZnhXbPcmynFh",
-      "pgport": 5432,
+      "pgport": "5432",
       "pguser": "postgres"
     }
   }

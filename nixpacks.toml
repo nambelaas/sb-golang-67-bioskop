@@ -1,0 +1,12 @@
+providers = ['go']
+
+[phases.setup]
+nixPkgs = ['...', 'go-migrate']
+
+[phases.start]
+cmds = [
+    "...",
+    "echo PGPORT is: ${PGPORT}",
+    "echo DATABASE_URL is: ${DATABASE_URL}",
+    "migrate -database \"${DATABASE_URL}?sslmode=disable\" -path database/migration up"
+]

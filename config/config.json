@@ -11,7 +11,7 @@
       "port": 5432
     },
     "railway": {
-      "database_url": "postgresql://postgres:VmxcSaBFoLWGVEJXKgKGZnhXbPcmynFh@postgres.railway.internal:5432/railway",
+      "database_url": "postgresql://${{PGUSER}}:${{PGPASSWORD}}@${{PGHOST}}:${{PGPORT}}/${{PGDATABASE}}",
       "pgdatabase": "railway",
       "pghost": "postgres.railway.internal",
       "pgpassword": "VmxcSaBFoLWGVEJXKgKGZnhXbPcmynFh",

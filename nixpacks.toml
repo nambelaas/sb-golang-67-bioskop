@@ -1,11 +1,11 @@
 providers = ['go']
 
 [phases.setup]
-nixPkgs = ['...','curl', 'gnutar', 'coreutils']
+nixPkgs = ['...', 'curl', 'gnutar', 'coreutils']
 
 [phases.install]
 cmds = [
-  'curl -L https://github.com/golang-migrate/migrate/releases/download/v3.5.4/migrate.linux-amd64.tar.gz | tar xz',
+  'curl -L https://github.com/golang-migrate/migrate/releases/download/v3.5.4/migrate.linux-amd64.tar.gz | gnutar xz',
   'chmod +x migrate'
 ]
 
@@ -16,6 +16,7 @@ cmds = [
 
 [phases.start]
 cmds = [
-  'if [ "$MIGRATE" = "true" ]; then ./migrate -database "postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}?sslmode=disable" -path database/migration up; fi',
+  'bash -c \'[ "$MIGRATE" = "true" ] && ./migrate -database "postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}?sslmode=disable" -path database/migration up\'',
   './app'
 ]
+

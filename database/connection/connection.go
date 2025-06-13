@@ -14,10 +14,10 @@ var (
 )
 
 func Init() {
-	dbData := fmt.Sprintf("host=%s user=%s port=%d password=%s dbname=%s sslmode=disable",
+	dbData := fmt.Sprintf("host=%s user=%s port=%s password=%s dbname=%s sslmode=disable",
 		viper.GetString("database.railway.pghost"),
 		viper.GetString("database.railway.pguser"), 
-		viper.GetInt("database.railway.pgport"), 
+		viper.GetString("database.railway.pgport"), 
 		viper.GetString("database.railway.pgpassword"), 
 		viper.GetString("database.railway.pgdatabase"))
 

@@ -6,5 +6,7 @@ nixPkgs = ['...', 'go-migrate']
 [phases.start]
 cmds = [
     "...",
+    "echo PGPORT is: $PGPORT",
+    "echo DATABASE_URL is: $DATABASE_URL",
     "migrate -database 'postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}?sslmode=disable' -path database/migration up"
 ]
